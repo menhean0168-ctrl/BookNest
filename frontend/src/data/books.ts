@@ -1,0 +1,48 @@
+import type { Book } from '@/types'
+
+export const books: Book[] = [
+  {
+    id: 1,
+    title: 'The Alchemist',
+    author: 'Paulo Coelho',
+    description: 'A shepherd travels in search of treasure and finds his purpose.',
+    year: 1988,
+    coverUrl: '',
+    status: 'approved',
+    categoryId: 1,
+    suggestedById: null,
+  },
+  {
+    id: 2,
+    title: 'A Brief History of Time',
+    author: 'Stephen Hawking',
+    description: 'An introduction to cosmology for general readers.',
+    year: 1988,
+    coverUrl: '',
+    status: 'approved',
+    categoryId: 2,
+    suggestedById: null,
+  },
+  {
+    id: 3,
+    title: 'First They Killed My Father',
+    author: 'Loung Ung',
+    description: 'A memoir of surviving the Khmer Rouge years.',
+    year: 2000,
+    coverUrl: '',
+    status: 'approved',
+    categoryId: 3,
+    suggestedById: null,
+  },
+  {
+    id: 4,
+    title: 'Sapiens',
+    author: 'Yuval Noah Harari',
+    description: '',
+    year: null,
+    coverUrl: '',
+    status: 'pending',
+    categoryId: 3,
+    suggestedById: 1,
+  },
+]

@@ -1,0 +1,15 @@
+@import './base.css';
+
+#app {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  color: hsla(160, 100%, 37%, 1);
+}
+
+a.router-link-exact-active {
+  font-weight: bold;
+}
