@@ -1,7 +1,7 @@
 # BookNest
 
 ## Problem
-Students who want a good book to read have no simple place to see honest ratings and reviews from other readers on campus. BookNest is a small book review site where readers rate and review books out of 5 stars, and an admin keeps the catalogue clean.
+People who want a good book to read have no simple place to see honest ratings and reviews from other readers. BookNest is a small book review site where readers rate and review books out of 5 stars, and an admin keeps the catalogue clean.
 
 ## Users and roles
 - Reader: browses and searches books, rates and reviews them, suggests missing books, and keeps a reading list.
@@ -31,11 +31,19 @@ Students who want a good book to read have no simple place to see honest ratings
 
 8. As a reader, I want to see the average rating of each book so that I can judge it at a glance.
 
-9. As a reader, I want a reading list (want to read / read) so that I can keep track of books.
+9. As a reader, I want a reading list so that I can keep track of books.
 
 ## MVP scope
 Must have: story 1, 2, 3, 4, 5, 6, 7
 Nice to have: story 8, 9
+
+## Which story did you cut, and why?
+I moved stories 8 (average rating) and 9 (reading list) out of the MVP and made them nice-to-have.
+
+- **Story 9 (reading list):** it adds a whole extra entity (ReadingListItem), its own endpoints, and its own page. It does not support the core idea of the app, which is reviews plus the suggestion and approval flow.
+- **Story 8 (average rating):** readers can already judge a book from its individual reviews, so it is a convenience, not a requirement. It is also cheap to add later because it only calculates over existing Review data.
+
+I kept stories 5 and 6 (suggest a book, admin approves or rejects) in the MVP because that workflow is what makes BookNest different from a basic recipe-and-reviews app. The time saved goes to search with pagination (story 2) and to tests.
 
 ## Entities
 | Entity | Main attributes | Relations |
@@ -51,4 +59,4 @@ One of: search + pagination.
 What it does in this app: readers search books by title or author, filter by category, and browse results 10 per page.
 
 ## Repository
-https://github.com/se-pong-mengheang/book-review
+https://github.com/menhean0168-ctrl/BookNest.git
