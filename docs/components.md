@@ -40,7 +40,7 @@ SuggestBookView
 | SuggestBookView | none | none | `suggested` list, success `message` |
 | SuggestBookForm | `categories` | `submit(suggestion)` | `form` fields, `errors` (local, only the form needs them) |
 
-## 4. Admin pending list (`/admin/pending`) — planned
+## 4. Admin pending list (`/admin/pending`) — built
 
 ```
 AdminPendingView
@@ -52,7 +52,7 @@ AdminPendingView
 | AdminPendingView | none | none | pending books list |
 | PendingBookRow | `book`, `categoryName` | `approve(id)`, `reject(id)` | none |
 
-## 5. Admin manage catalogue (`/admin/catalogue`) — planned
+## 5. Admin manage catalogue (`/admin/catalogue`) — built
 
 ```
 AdminCatalogueView
@@ -74,6 +74,6 @@ Admin-only: the route is guarded by `role === 'admin'` (story 7).
 
 ## State: store vs component (M1 answer)
 
-- **Store (Pinia, added later):** data shared across pages or loaded from the API: books, categories, the current book, reviews, `loading`, `error`, and the logged-in user.
+- **Store (Pinia):** data shared across pages or loaded from the API: books, categories, the current book, reviews, `loading`, `error`, and the logged-in user.
 - **Component:** state only one component needs: form field values and validation messages, search text, and open/closed UI state.
 - **Why:** shared data in one place avoids copying it between pages and refetching it. Local UI state in the component keeps the store small and the component easy to reuse.
