@@ -1,0 +1,124 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Dara",
+      "email": "dara@example.com",
+      "role": "reader"
+    },
+    {
+      "id": 2,
+      "name": "Admin",
+      "email": "admin@example.com",
+      "role": "admin"
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Fiction"
+    },
+    {
+      "id": 2,
+      "name": "Science"
+    },
+    {
+      "id": 3,
+      "name": "History"
+    }
+  ],
+  "books": [
+    {
+      "id": 1,
+      "title": "The Alchemist",
+      "author": "Paulo Coelho",
+      "description": "A shepherd travels in search of treasure and finds his purpose.",
+      "year": 1988,
+      "coverUrl": "",
+      "status": "approved",
+      "categoryId": 1,
+      "suggestedById": null
+    },
+    {
+      "id": 2,
+      "title": "A Brief History of Time",
+      "author": "Stephen Hawking",
+      "description": "An introduction to cosmology for general readers.",
+      "year": 1988,
+      "coverUrl": "",
+      "status": "approved",
+      "categoryId": 2,
+      "suggestedById": null
+    },
+    {
+      "id": 3,
+      "title": "First They Killed My Father",
+      "author": "Loung Ung",
+      "description": "A memoir of surviving the Khmer Rouge years.",
+      "year": 2000,
+      "coverUrl": "",
+      "status": "approved",
+      "categoryId": 3,
+      "suggestedById": null
+    },
+    {
+      "id": 4,
+      "title": "Sapiens",
+      "author": "Yuval Noah Harari",
+      "description": "",
+      "year": null,
+      "coverUrl": "",
+      "status": "approved",
+      "categoryId": 3,
+      "suggestedById": 1
+    },
+    {
+      "title": "Berserk",
+      "author": "Kentaro Miura",
+      "categoryId": 1,
+      "description": "",
+      "year": null,
+      "coverUrl": "",
+      "status": "approved",
+      "suggestedById": 1,
+      "id": 5
+    }
+  ],
+  "reviews": [
+    {
+      "id": 1,
+      "bookId": 1,
+      "userId": 1,
+      "rating": 5,
+      "text": "Short and inspiring."
+    },
+    {
+      "id": 2,
+      "bookId": 1,
+      "userId": 2,
+      "rating": 4,
+      "text": ""
+    },
+    {
+      "id": 3,
+      "bookId": 2,
+      "userId": 1,
+      "rating": 4,
+      "text": "Hard in places, but worth it."
+    }
+  ],
+  "readingList": [
+    {
+      "id": 1,
+      "userId": 1,
+      "bookId": 2,
+      "status": "want to read"
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "bookId": 1,
+      "status": "read"
+    }
+  ]
+}
