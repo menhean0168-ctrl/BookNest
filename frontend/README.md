@@ -1,54 +1,36 @@
-# frontend
+# BookNest frontend
 
-This template should help get you started developing with Vue 3 in Vite.
+Vue 3 + TypeScript + Vite + Vue Router + Pinia, with a mock API from json-server.
 
-## Recommended IDE Setup
-
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Recommended Browser Setup
-
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
-
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
+## How to run
 
 ```sh
 npm install
+npm run api   # terminal 1: mock API at http://localhost:3000 (reads db.json)
+npm run dev   # terminal 2: app at http://localhost:5173
 ```
 
-### Compile and Hot-Reload for Development
+Demo logins (any password of 8+ characters): `dara@example.com` (reader), `admin@example.com` (admin).
 
-```sh
-npm run dev
-```
+To reset the data, restore `db.json` from git (`git checkout db.json`). The API writes changes into it.
 
-### Type-Check, Compile and Minify for Production
+## Structure
 
-```sh
-npm run build
-```
+- `db.json`: one array per entity, linked by ids (`categoryId`, `bookId`, `userId`).
+- `src/api/`: `http.ts` plus one file per resource.
+- `src/stores/`: Pinia stores (`books`, `reviews`, `auth`).
+- `src/views/`, `src/components/`: pages and reusable components.
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-npm run test:unit
-```
-
-### Lint with [ESLint](https://eslint.org/)
+## Checks
 
 ```sh
 npm run lint
+npm run build
+npm run test:unit
 ```
+
+## State: store vs component
+
+- **Store:** data shared across pages or loaded from the API (books, categories, reviews, `loading`, `error`) and the logged-in user.
+- **Component:** state only one component needs (form fields, validation messages, search text).
+- **Why:** shared data in one place avoids copies and refetching. Local UI state stays in the component so the store stays small.
